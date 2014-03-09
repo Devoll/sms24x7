@@ -8,7 +8,7 @@ if(phone == undefined || text == undefined){
 
 var sms24x7 = require('./../sms24x7');
 
-var sms = new sms24x7('devoll@devoll.ru', '9bW9wZt');
+var sms = new sms24x7('your@email', 'password');
 
 sms.send(phone, text, function(err, res){
     if(err){
