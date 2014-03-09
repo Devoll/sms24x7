@@ -6,7 +6,7 @@ if(phone == undefined || text == undefined){
     throw new Error('Phone or text is undefined!');
 }
 
-var sms24x7 = require('./sms24x7');
+var sms24x7 = require('./../sms24x7');
 
 var sms = new sms24x7('devoll@devoll.ru', '9bW9wZt');
 
