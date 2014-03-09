@@ -1,0 +1,1 @@
+module for work with api sms24x7.ru
