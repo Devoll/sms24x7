@@ -15,16 +15,20 @@ sms24x7.prototype = {
                 throw new Error(err);
             }
 
-            http.get(_this.endpoint
+            var url_send = _this.endpoint
                 + '?method=push_msg'
                 + '&phone=' + number
                 + '&text=' + text
                 + '&sid=' + sid
-                + '&format=json',
+                + '&format=json';
+
+            if(_this.debug){ console.log('[Request] ' + url_send); }
+
+            http.get(url_send,
 
                 function(res){
                     res.on('data', function(data){
-                        if(_this.debug){ console.log('[Send] response: ' + data); }
+                        if(_this.debug){ console.log('[Response] ' + data); }
 
                         var res = JSON.parse(data);
 
@@ -43,15 +47,19 @@ sms24x7.prototype = {
     login: function(email, password, callback){
         var _this = this;
 
-        http.get(_this.endpoint
-                + '?method=login'
-                + '&email=' + email
-                + '&password=' + password
-                + '&format=json',
+        var url_login = _this.endpoint
+            + '?method=login'
+            + '&email=' + email
+            + '&password=' + password
+            + '&format=json';
+
+        if(_this.debug){ console.log('[Request] ' + url_login); }
+
+        http.get(url_login,
 
             function(res){
                 res.on('data', function(data){
-                    if(_this.debug){ console.log('[Login] response: ' + data); }
+                    if(_this.debug){ console.log('[Response] ' + data); }
                     var res = JSON.parse(data);
 
                     if(res.response.data.sid){

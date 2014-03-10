@@ -1,6 +1,6 @@
 {
   "name": "sms24x7",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Api for sms24x7.ru",
   "main": "sms24x7.js",
   "scripts": {
